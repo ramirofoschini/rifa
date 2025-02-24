@@ -188,6 +188,8 @@
      </div>
 
 <h2 class="numbers-heading">Números Disponibles</h2>
+<p>(en verde)</p>
+
 <br>
         <div class="numbers" id="numberGrid"></div>
 
@@ -234,7 +236,7 @@
     <script>
         document.addEventListener("DOMContentLoaded", function() {
             const numberGrid = document.getElementById("numberGrid");
-            const soldNumbers = [9,14,47]; // Ejemplo de números vendidos
+            const soldNumbers = [9,14,47,46]; // Ejemplo de números vendidos
             const thanksModal = new bootstrap.Modal(document.getElementById('thanksModal'));
 
             for (let i = 1; i <= 100; i++) {
