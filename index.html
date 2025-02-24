@@ -7,9 +7,52 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <style>
-       p, h2, li{
-               color:  #ffddcc;}
-        body {
+ /* Fuentes personalizadas */
+    @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500;700&family=Poppins:wght@600&display=swap');
+
+    .header-section {
+        text-align: center;
+        background-color: #FDE2E4; /* Fondo suave rosado */
+        padding: 30px;
+        border-radius: 15px;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+        margin-bottom: 30px;
+    }
+
+    .logo {
+        width: 120px;
+        margin-bottom: 20px;
+        border-radius: 50%;
+        border: 5px solid #ff6f61; /* Borde con color suave */
+    }
+
+    .title {
+        font-family: 'Poppins', sans-serif;
+        font-size: 2.5rem;
+        color: #ff6f61; /* Color de texto */
+        font-weight: 700;
+        margin-bottom: 10px;
+    }
+
+    .subtitle {
+        font-family: 'Roboto', sans-serif;
+        font-size: 1.2rem;
+        color: #333;
+        font-weight: 500;
+    }
+
+    .numbers-heading {
+        font-family: 'Poppins', sans-serif;
+        font-size: 2rem;
+        color: #2c3e50; /* Color oscuro para el encabezado */
+        text-align: center;
+        margin-top: 50px;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        font-weight: 600;
+    }  
+
+     body {
             font-family: Arial, sans-serif;
             text-align: center;
             background-color: #ffddcc; /* Color pastel */
@@ -29,86 +72,169 @@
             color: #e74c3c;
         }
         .numbers {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-        }
-        .number {
-            width: 40px;
-            height: 40px;
-            margin: 5px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: 50%;
-            background-color: #2ecc71;
-            color: white;
-            font-weight: bold;
-            cursor: pointer;
-            transition: background-color 0.3s;
-        }
+    display: flex;
+    flex-wrap: wrap; /* Para que los números se ajusten a la siguiente línea cuando se agoten */
+    justify-content: flex-start;
+    gap: 0; /* Elimina cualquier espaciado extra entre los elementos */
+    margin: 0; /* Elimina márgenes extras si los hay */
+}
+
+.number {
+    width: 40px;
+    height: 40px;
+    display: inline-flex; /* Permite que los números estén pegados uno al otro */
+    align-items: center;
+    justify-content: center;
+    border-radius: 1px;
+    background-color: #2ecc71;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    border: 1px solid white; /* Raya blanca entre los números */
+}
+
         .number.sold {
             background-color: #e74c3c;
+        }
+        .prizes {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-top: 20px;
         }
         .prizes img {
             width: 200px;
             margin: 10px;
             border-radius: 10px;
         }
-        .logo {
-            width: 100px;
-            margin: 10px;
+        .prizes .text {
+            text-align: left;
+            max-width: 50%;
         }
+
+    .prizes-heading {
+        font-family: 'Poppins', sans-serif;
+        font-size: 2rem;
+        color: #2c3e50;
+        text-align: center;
+        margin-top: 50px;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        font-weight: 600;
+    }
+
+    .prizes {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 30px;
+        align-items: center;
+        margin-top: 30px;
+        padding: 0 20px;
+    }
+
+    .prizes-text {
+        width: 50%;
+        font-family: 'Roboto', sans-serif;
+        font-size: 1.1rem;
+        color: #333;
+        font-weight: 500;
+        line-height: 1.6;
+        text-align: left;
+    }
+
+    .prizes-text p {
+        margin-bottom: 15px;
+        padding-left: 10px;
+        border-left: 4px solid #ff6f61;
+        font-size: 1.2rem;
+        transition: color 0.3s ease;
+    }
+
+    .prizes-text p:hover {
+        color: #ff6f61;
+    }
+
+    .prizes-images {
+        width: 40%;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        justify-content: center;
+    }
+
+    .prizes-images img {
+        width: 100%;
+        height: auto;
+        border-radius: 10px;
+        box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .prizes-images img:hover {
+        transform: scale(1.05);
+        box-shadow: 0 12px 20px rgba(0, 0, 0, 0.2);
+    }
+      
     </style>
 </head>
 <body>
     <div class="container">
-        <img src="https://cdn-icons-png.flaticon.com/512/1998/1998592.png" alt="Logo Gato" class="logo">
-        <h1>Gran Rifa</h1>
-        <p>Ayude a esta despedida a pagar el alquiler</p>
-        
-        <h2>Números Disponibles</h2>
+     <div class="header-section">
+      <img src="https://cdn-icons-png.flaticon.com/512/1998/1998592.png" alt="Logo Gato" class="logo">
+      <h1 class="title">Rifa Solidaria</h1>
+      <p class="subtitle">Ayude a esta despedida a pagar el alquiler</p>
+     </div>
+
+<h2 class="numbers-heading">Números Disponibles</h2>
+<br>
         <div class="numbers" id="numberGrid"></div>
-        <br>
-<br>
-<br>
-        <h2>Premios</h2>
-        
-            <p>TATTO DE @katanatt</p>
-            <p>Lula Cerámica</p>
-            <p>Pan de masa madre @caroo_senatore</p>
-            <p>Promo de 2 libros de IPS</p>
-            <p>Aros de @LUA.NASCENTE.ARTESANATO</p>
-        
-        <div class="prizes">
-            <img src="OIP.jpg" alt="Premio 1">
-            <img src="Cartaz_Rifa.jpeg" alt="Premio 2">
-            <img src="arton216840.jpg" alt="Premio 3">
-        </div>
+
+        <!-- Sección de premios -->
+<h2 class="prizes-heading">Premios</h2>
+<div class="prizes">
+    <div class="prizes-text">
+        <p>Tattoo @katanatt</p>
+        <p>Pieza de cerámica de @lu.gommez</p>
+        <p>Pan de masa madre de @caroo_senatore</p>
+        <p>Promo de 2 libros de IPS</p>
+        <p>Pulsera y tobillera de @LUA.NASCENTE.ARTESANATO</p>
+    </div>
+    <div class="prizes-images">
+        <img src="OIP.jpg" alt="Premio 1">
+        <img src="Cartaz_Rifa.jpeg" alt="Premio 2">
+        <img src="arton216840.jpg" alt="Premio 3">
+    </div>
+</div>
     </div>
 
     <!-- Modal de mensaje -->
-    <div class="modal fade" id="thanksModal" tabindex="-1" aria-labelledby="thanksModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="thanksModalLabel">¡Gracias!</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    ¡Gracias por aportar a esta desempleada!
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-                </div>
+   <div class="modal fade" id="thanksModal" tabindex="-1" aria-labelledby="thanksModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered"> <!-- Agregar la clase modal-dialog-centered -->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                ¡Gracias por aportar a esta desempleada!
+                Mandame el comporbante y el numero que compraste en <a href="https://instagram.com/aquarella.rouge" target="_blank">@aquarella.rouge</a>
+            </div>
+            <div class="modal-footer justify-content-center">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
             </div>
         </div>
+    </div>
+</div>
+
+</div>
+
     </div>
 
     <script>
         document.addEventListener("DOMContentLoaded", function() {
             const numberGrid = document.getElementById("numberGrid");
-            const soldNumbers = [5, 18, 23, 42, 56, 78]; // Ejemplo de números vendidos
+            const soldNumbers = [9,14,47]; // Ejemplo de números vendidos
             const thanksModal = new bootstrap.Modal(document.getElementById('thanksModal'));
 
             for (let i = 1; i <= 100; i++) {
